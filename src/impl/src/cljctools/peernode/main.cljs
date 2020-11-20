@@ -1,4 +1,4 @@
-(ns deathstar.peernode.main
+(ns cljctools.peernode.main
   (:require
    [clojure.core.async :as a :refer [chan go go-loop <! >!  take! put! offer! poll! alt! alts! close!
                                      pub sub unsub mult tap untap mix admix unmix pipe
@@ -22,8 +22,8 @@
    [cljctools.rsocket.examples-nodejs]
    [cljctools.rsocket.examples]
 
-   [deathstar.peernode.spec :as peernode.spec]
-   [deathstar.peernode.chan :as peernode.chan]))
+   [cljctools.peernode.spec :as peernode.spec]
+   [cljctools.peernode.chan :as peernode.chan]))
 
 (def fs (node/require "fs"))
 (def path (node/require "path"))

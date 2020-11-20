@@ -1,5 +1,5 @@
-(ns deathstar.peernode.spec
-  #?(:cljs (:require-macros [deathstar.peernode.spec]))
+(ns cljctools.peernode.spec
+  #?(:cljs (:require-macros [cljctools.peernode.spec]))
   (:require
    [clojure.spec.alpha :as s]))
 

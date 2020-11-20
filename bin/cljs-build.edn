@@ -1,7 +1,7 @@
 {:optimizations :simple
  :output-to "resources/out/main.js"
  :target :nodejs
- :main deathstar.peernode.main
+ :main cljctools.peernode.main
  :verbose true
  :output-dir "out"}
 #_{:optimizations :advanced

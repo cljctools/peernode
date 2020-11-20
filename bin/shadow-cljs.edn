@@ -6,8 +6,8 @@
  :builds {:main {;
                  :target :node-library
                 ;  :target :node-script
-                 :main deathstar.peernode.main/main
-                 :exports-var deathstar.peernode.main/exports
+                 :main cljctools.peernode.main/main
+                 :exports-var cljctools.peernode.main/exports
                  :output-to "resources/out/main.js"
                  :compiler-options {:optimizations :simple
                                     :infer-externs   false  #_:auto
@@ -24,8 +24,8 @@
                  {:js-provider :shadow
                   :keep-native-requires true
                   :keep-as-require #{}}
-                 :devtools {:repl-init-ns deathstar.peernode.main
+                 :devtools {:repl-init-ns cljctools.peernode.main
                             :repl-pprint true
                             :autobuild true
                             :devtools-url "http://localhost:9630"
-                            :after-load deathstar.peernode.main/reload}}}}
+                            :after-load cljctools.peernode.main/reload}}}}
