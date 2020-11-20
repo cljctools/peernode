@@ -95,16 +95,13 @@
               (let [{:keys []} value
                     id (.-id (<p! (daemon._ipfs.id)))]
                 (println ::init)
-                (daemon._ipfs.pubsub.subscribe
-                 TOPIC-ID
-                 (fn [msg]
-                   (when-not (= id msg.from)
-                     #_(do
-                         #_(println (format "id: %s" id))
-                         #_(println (format "from: %s" msg.from))
-                         (println (format "data: %s" (.toString msg.data)))
-                         #_(println (format "topicIDs: %s" msg.topicIDs)))
-                     (put! pubsub| msg))))
+
+                (peernode.chan/op
+                 {::op.spec/op-key ::pubsub-sub
+                  ::op.spec/op-type ::op.spec/fire-and-forget}
+                 channels
+                 {::peernode.spec/topic-id TOPIC-ID})
+                
                 #_(let [counter (volatile! 0)]
                     (go (loop []
                           (<! (timeout (* 2000 (+ 1 (rand-int 2)))))
@@ -114,6 +111,7 @@
                            (-> (js/TextEncoder.)
                                (.encode (str {::some-op (str (subs id (- (count id) 7)) " " @counter)}))))
                           (recur)))))
+              
               {::op.spec/op-key ::peernode.chan/id
                ::op.spec/op-type ::op.spec/request-response
                ::op.spec/op-orient ::op.spec/request}
