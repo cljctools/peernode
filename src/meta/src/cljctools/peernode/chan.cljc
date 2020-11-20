@@ -15,8 +15,8 @@
 (s/def ::op (s/multi-spec op* op.spec/op-spec-retag-fn))
 (defmulti op op.spec/op-dispatch-fn)
 
-(s/def ::pubsub|)
-(s/def ::pubsub|m)
+(s/def ::pubsub| some?)
+(s/def ::pubsub|m some?)
 
 (defn create-channels
   []
