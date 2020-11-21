@@ -97,7 +97,7 @@
                 (println ::init)
 
                 (peernode.chan/op
-                 {::op.spec/op-key ::pubsub-sub
+                 {::op.spec/op-key ::peernode.chan/pubsub-sub
                   ::op.spec/op-type ::op.spec/fire-and-forget}
                  channels
                  {::peernode.spec/topic-id TOPIC-ID})
@@ -126,7 +126,7 @@
                  out|
                  {::peernode.spec/id id}))
 
-              {::op.spec/op-key ::pubsub-sub
+              {::op.spec/op-key ::peernode.chan/pubsub-sub
                ::op.spec/op-type ::op.spec/fire-and-forget}
               (let [{:keys [::peernode.spec/topic-id]} value
                     pubsub| (chan (sliding-buffer 64))
@@ -146,7 +146,7 @@
                            #_(println (format "topicIDs: %s" msg.topicIDs)))
                        (put! pubsub| msg))))))
 
-              {::op.spec/op-key ::pubsub-unsub
+              {::op.spec/op-key ::peernode.chan/pubsub-unsub
                ::op.spec/op-type ::op.spec/fire-and-forget}
               (let [{:keys [::peernode.spec/topic-id]} value
                     {:keys [::peernode.chan/pubsub|

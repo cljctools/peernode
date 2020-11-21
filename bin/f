@@ -40,4 +40,37 @@ cljs_compile(){
     #  clj -A:dev -m cljs.main -co cljs-build.edn -v -c # -r
 }
 
+
+dock() {
+
+    IMAGE=cljctools.peernode
+    NAME=peernode
+    # NETWORK=deathstar
+    REPL_PORT=8899
+  
+    docker build \
+      -t $IMAGE \
+      --build-arg workdir=/ctx/peernode/bin \
+      -f Dockerfile .
+    
+    # docker network create $NETWORK
+    # xhost +
+
+    docker run  --rm \
+                --cpus=4.0 \
+                --memory=8g \
+                --name $NAME \
+                -it \
+                -e IPFS_PATH=/root/.jsipfs \
+                -p $REPL_PORT:8899 \
+                -v "$(pwd)/.user":/root \
+                -v "$(cd ../../ && pwd)/":/ctx \
+                 $IMAGE \
+                 bash
+}
+
+into(){
+    docker exec -it peernode /bin/bash
+}
+
 "$@"
