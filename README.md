@@ -13,3 +13,6 @@ a program that runs inside forked js-ipfs daemon and exposes pubsub over rsocket
 - RSocket protocol
   - http://rsocket.io/
   - http://github.com/rsocket
+- cljctools/rsocket interface
+  - https://github.com/cljctools/cljctools/tree/main/rsocket-js
+  - https://github.com/cljctools/cljctools/tree/main/rsocket-java
