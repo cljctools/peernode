@@ -9,4 +9,4 @@
         github.cljctools/csp {:local/root "/ctx/cljctools/csp"}
         github.cljctools/rsocket-js {:local/root  "/ctx/cljctools/rsocket-js"}
 
-        github.cljctools/peernode.meta {:local/root "../meta"}}}
+        github.cljctools/peernode-meta {:local/root "../peernode-meta"}}}
