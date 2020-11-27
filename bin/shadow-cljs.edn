@@ -1,7 +1,7 @@
 {:deps  true #_{:aliases [:cljs-dev :ui :peer]}
  :nrepl {:host "0.0.0.0"
-         :port 8899}
- :http {:port 9630
+         :port #shadow/env ["SHADOWCLJS_NREPL_PORT" :as :int :default 8899]}
+ :http {:port #shadow/env ["SHADOWCLJS_HTTP_PORT" :as :int :default 9630]
         :host "0.0.0.0"}
  :builds {:main {;
                  :target :node-library
@@ -15,6 +15,7 @@
                                     :stable-names true
                                     :recompile-dependents true
                                     :source-maps true
+                                    :closure-defines {cljctools.peernode.main/RSOCKET_PORT #shadow/env ["PEERNODE_RSOCKET_PORT" :as :int :default 7000]}
                                                 ;    :language-in  :ecmascript5
                                                 ;    :language-out :no-transpile
                                     :cross-chunk-method-motion false  ; https://github.com/thheller/shadow-cljs/issues/611#issuecomment-620845276
@@ -27,5 +28,6 @@
                  :devtools {:repl-init-ns cljctools.peernode.main
                             :repl-pprint true
                             :autobuild true
-                            :devtools-url "http://localhost:9630"
-                            :after-load cljctools.peernode.main/reload}}}}
+                            :devtools-url #shadow/env ["SHADOWCLJS_DEVTOOLS_URL" :default "http://localhost:9630"]
+                            :after-load cljctools.peernode.main/reload
+                            :http-port #shadow/env ["SHADOWCLJS_DEVTOOLS_HTTP_PORT" :as :int :default 9500]}}}}

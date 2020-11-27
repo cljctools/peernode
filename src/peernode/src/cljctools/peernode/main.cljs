@@ -28,6 +28,10 @@
 (def fs (node/require "fs"))
 (def path (node/require "path"))
 
+(goog-define PEERNODE_RSOCKET_PORT 0)
+
+(def ^:const RSOCKET_PORT (or (aget js/global.process.env "PEERNODE_RSOCKET_PORT") PEERNODE_RSOCKET_PORT))
+
 (def channels (merge
                (rsocket.chan/create-channels)
                (peernode.chan/create-channels)))
@@ -198,7 +202,7 @@
               channels
               {::rsocket.spec/connection-side ::rsocket.spec/accepting
                ::rsocket.spec/host "0.0.0.0"
-               ::rsocket.spec/port 7000
+               ::rsocket.spec/port RSOCKET_PORT
                ::rsocket.spec/transport ::rsocket.spec/websocket}))
 
 (def peernode (create-proc-ops channels {}))
