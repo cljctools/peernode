@@ -15,7 +15,7 @@
                                     :stable-names true
                                     :recompile-dependents true
                                     :source-maps true
-                                    :closure-defines {cljctools.peernode.main/RSOCKET_PORT #shadow/env ["PEERNODE_RSOCKET_PORT" :as :int :default 7000]}
+                                    :closure-defines {cljctools.peernode.main/RSOCKET_PORT #shadow/env ["RSOCKET_PORT" :as :int :default 7000]}
                                                 ;    :language-in  :ecmascript5
                                                 ;    :language-out :no-transpile
                                     :cross-chunk-method-motion false  ; https://github.com/thheller/shadow-cljs/issues/611#issuecomment-620845276
