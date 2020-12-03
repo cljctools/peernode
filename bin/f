@@ -48,7 +48,7 @@ main(){
     daemon
 }
 
-daemon(){
+start(){
     cd /ctx/js-ipfs/packages/ipfs
     bash init-and-daemon.sh
 }

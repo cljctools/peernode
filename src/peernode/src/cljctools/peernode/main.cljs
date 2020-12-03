@@ -30,7 +30,7 @@
 
 (goog-define RSOCKET_PORT 0)
 
-(def ^:const RSOCKET_PORT (or (aget js/global.process.env "RSOCKET_PORT") RSOCKET_PORT))
+(set! RSOCKET_PORT (or (aget js/global.process.env "RSOCKET_PORT") RSOCKET_PORT))
 
 (def channels (merge
                (rsocket.chan/create-channels)
