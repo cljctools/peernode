@@ -1,8 +1,6 @@
 # peernode
 a program that runs inside forked js-ipfs daemon and exposes pubsub over rsocket
 
-[archived]
-
 > the program is useful as an example and a reference, but turned out redundant:    
 > https://github.com/sergeiudris/deathstar.lab/blob/5cd3256b6509bfb894f251a4030d9837449c0060/docs/design/design.md#no-need-for-peernode-and-ipfs-node-as-a-container-is-optional
 
