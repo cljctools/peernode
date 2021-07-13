@@ -1,9 +1,6 @@
 # peernode
 a program that runs inside forked js-ipfs daemon and exposes pubsub over rsocket
 
-> the program is useful as an example and a reference, but turned out redundant:    
-> https://github.com/DeathStarGame/DeathStarGame/blob/5cd3256b6509bfb894f251a4030d9837449c0060/docs/design/design.md#no-need-for-peernode-and-ipfs-node-as-a-container-is-optional
-
 - this program is used by https://github.com/DeathStarGame/DeathStarGame, but is generic
 - as noted here https://github.com/DeathStarGame/DeathStarGame/blob/cd56a2f3a77e14951106131a1b87bbf756b0eeb4/docs/design/design.md#ipfs-node-pubsub-stream-cannot-be-consumed-from-jvm-app-either-use-libp2p-or-fork-modify-js-ipfs-node
 - it runs inside the fork of js-ipfs https://github.com/cljctools/js-ipfs
