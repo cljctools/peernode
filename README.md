@@ -2,11 +2,11 @@
 a program that runs inside forked js-ipfs daemon and exposes pubsub over rsocket
 
 > the program is useful as an example and a reference, but turned out redundant:    
-> https://github.com/sergeiudris/deathstar.lab/blob/5cd3256b6509bfb894f251a4030d9837449c0060/docs/design/design.md#no-need-for-peernode-and-ipfs-node-as-a-container-is-optional
+> https://github.com/DeathStarGame/DeathStarGame/blob/5cd3256b6509bfb894f251a4030d9837449c0060/docs/design/design.md#no-need-for-peernode-and-ipfs-node-as-a-container-is-optional
 
 - this program is used by https://github.com/DeathStarGame/DeathStarGame, but is generic
-- as noted here https://github.com/sergeiudris/deathstar.lab/blob/cd56a2f3a77e14951106131a1b87bbf756b0eeb4/docs/design/design.md#ipfs-node-pubsub-stream-cannot-be-consumed-from-jvm-app-either-use-libp2p-or-fork-modify-js-ipfs-node
-- it runs inside the fork of js-ipfs https://github.com/sergeiudris/js-ipfs
+- as noted here https://github.com/DeathStarGame/DeathStarGame/blob/cd56a2f3a77e14951106131a1b87bbf756b0eeb4/docs/design/design.md#ipfs-node-pubsub-stream-cannot-be-consumed-from-jvm-app-either-use-libp2p-or-fork-modify-js-ipfs-node
+- it runs inside the fork of js-ipfs https://github.com/cljctools/js-ipfs
 - a jvm game app and peernode (running on nodejs) talk over rsocket via same clojure common interface (cljctools/rsocket), only different implementations (jvm and generic node/browser)
   - example works on both jvm/node/browser https://github.com/cljctools/cljctools/blob/0a34a2da45b4d9b22b2259ce393d47dc75707a5b/rsocket-meta/src/cljctools/rsocket/examples.cljc
 
@@ -37,7 +37,7 @@ git clone https://github.com/cljctools/peernode \
 && cd cljctools \
 && git checkout 0a34a2da45b4d9b22b2259ce393d47dc75707a5b \
 && cd ../ \
-&& git clone https://github.com/sergeiudris/js-ipfs \
+&& git clone https://github.com/cljctools/js-ipfs \
 && cd js-ipfs \
 && git checkout 36d504f05d626feea52396d61cb1a33a17c5b596 \
 && cd ../
