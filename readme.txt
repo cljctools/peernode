@@ -1,4 +1,4 @@
-# peernode
+peernode
 a program that runs inside forked js-ipfs daemon and exposes pubsub over rsocket
 
 - this program is used by https://github.com/DeathStarGame/DeathStarGame, but is generic
@@ -18,12 +18,11 @@ a program that runs inside forked js-ipfs daemon and exposes pubsub over rsocket
   - https://github.com/cljctools/cljctools/blob/main/rsocket-js/src/cljctools/rsocket/impl.cljs
 
 
-## run
+run
 
 - requires docker installed (probably 19.03+)
 - but all installation and build happen inside a container, so it will compile
 
-```bash
 # in the same dir clone repos and checkout git commits 
 # (select this whole command and run it)
 git clone https://github.com/cljctools/peernode \
@@ -75,5 +74,3 @@ bash init-and-daemon.sh # we'll logs telling ipfs is running
 # docker container by default uses USER=0:0 (not 1000:1000)
 # (or change peernode/bin/f by providing -u option to docker run)
 sudo rm -rf peernode js-ipfs
-
-```
