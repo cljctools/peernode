@@ -35,7 +35,7 @@ git clone https://github.com/cljctools/peernode \
 && cd ../ \
 && git clone https://github.com/cljctools/js-ipfs \
 && cd js-ipfs \
-&& git checkout 36d504f05d626feea52396d61cb1a33a17c5b596 \
+&& git checkout ecff65c2e414cbc25d9f9ccbe084fb844df62a2e \
 && cd ../
 
 # open two terminals, in the first: 
